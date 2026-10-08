@@ -64,15 +64,18 @@ export function FormMoto({
   const chaveLocal = `central:moto:${id}`
 
   // ---- Rascunho no aparelho: sessão que venceu no meio não perde o que foi digitado
+  // Só ao abrir a moto: o refresh do envio de foto troca o `inicial` e acusaria o que está sendo digitado
+  const inicialAtual = useRef(inicial)
+  inicialAtual.current = inicial
   useEffect(() => {
     try {
       const guardado = localStorage.getItem(chaveLocal)
       if (!guardado) return
       const { form: antigo } = JSON.parse(guardado) as { form: Formulario }
-      if (JSON.stringify(antigo) !== JSON.stringify(inicial)) setRascunhoLocal(antigo)
+      if (JSON.stringify(antigo) !== JSON.stringify(inicialAtual.current)) setRascunhoLocal(antigo)
       else localStorage.removeItem(chaveLocal)
     } catch {}
-  }, [chaveLocal, inicial])
+  }, [chaveLocal])
 
   useEffect(() => {
     if (!sujo) return
