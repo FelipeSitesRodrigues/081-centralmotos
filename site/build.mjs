@@ -316,3 +316,15 @@ console.log(
   `${relatorio.length} páginas, ${dados.aVenda.length} motos à venda, ${paginasMoto.length - dados.aVenda.length} vendidas recentes · dados: ${dados.origem} · ${producao ? `PRODUÇÃO (${dominio})` : 'sem domínio: noindex'} · ${((Date.now() - inicio) / 1000).toFixed(1)} s`,
 )
 if (avisos.length) console.log(`AVISOS:\n  ${[...new Set(avisos)].join('\n  ')}`)
+
+// Avisa o banco que esta publicação terminou: o painel mostra a hora e a fila não dispara de novo
+if (dados.origem === 'banco' && process.env.PUBLICACAO_SEGREDO) {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL
+  const chave = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? process.env.SUPABASE_ANON_KEY
+  const resposta = await fetch(`${url}/rest/v1/rpc/registrar_publicacao`, {
+    method: 'POST',
+    headers: { apikey: chave, ...(chave.startsWith('eyJ') ? { Authorization: `Bearer ${chave}` } : {}), 'Content-Type': 'application/json' },
+    body: JSON.stringify({ p_segredo: process.env.PUBLICACAO_SEGREDO }),
+  })
+  console.log(`publicação registrada no banco: ${resposta.ok ? await resposta.text() : `falhou (${resposta.status})`}`)
+}
