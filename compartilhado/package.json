@@ -1,0 +1,10 @@
+{
+  "name": "@central/vitrine",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./parcela": "./vitrine/parcela.mjs",
+    "./formato": "./vitrine/formato.mjs",
+    "./tipos": "./tipos/banco.ts"
+  }
+}

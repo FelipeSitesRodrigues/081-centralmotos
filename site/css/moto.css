@@ -1,0 +1,311 @@
+/*
+ * Página da moto. Celular: galeria primeiro, depois nome, parcela e botões; o WhatsApp
+ * fica fixo no rodapé da tela. Computador: galeria à esquerda, informações à direita.
+ */
+.pagina-moto {
+  padding: 22px 0 64px;
+  background: var(--preto);
+}
+.moto {
+  display: grid;
+  gap: 24px;
+}
+.galeria {
+  position: relative;
+  min-width: 0;
+  margin-inline: calc(var(--respiro) * -1);
+}
+.galeria__trilho {
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0;
+  scrollbar-width: none;
+}
+.galeria__trilho::-webkit-scrollbar {
+  display: none;
+}
+.galeria__slide {
+  flex: 0 0 100%;
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.galeria__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.galeria__contador {
+  position: absolute;
+  right: calc(var(--respiro) + 4px);
+  top: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(11, 11, 13, 0.75);
+  font-size: 13px;
+  font-weight: 700;
+  pointer-events: none;
+}
+.galeria__miniaturas {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+
+.moto__info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+.moto__selos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.moto__nome {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 8vw, 3rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+.moto__resumo {
+  font-size: 15px;
+  color: var(--texto-claro-forte);
+}
+.moto__parcela {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-top: 4px;
+  padding: 18px;
+  border-radius: var(--raio-cartao);
+  background: var(--carvao);
+  border: 1px solid var(--grafite);
+}
+.moto__parcela-rotulo {
+  font-size: 16px;
+  color: var(--texto-claro-forte);
+}
+.moto__parcela-valor {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.6rem, 11vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--vermelho);
+}
+.moto__parcela-nota {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--texto-claro-forte);
+}
+.moto__aviso {
+  font-size: 13px;
+  color: var(--texto-claro);
+}
+.moto__acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.moto__acoes .botao,
+.moto__info > .botao {
+  width: 100%;
+}
+.moto__onde {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--texto-claro-forte);
+}
+.moto__onde .i {
+  width: 18px;
+  height: 18px;
+  color: var(--vermelho-texto-escuro);
+}
+.moto__vendida {
+  padding: 18px;
+  border-radius: var(--raio-cartao);
+  background: var(--carvao);
+  border: 1px solid var(--grafite);
+}
+.moto__vendida-titulo {
+  margin-bottom: 6px;
+  font-family: var(--fonte-titulo);
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.moto-detalhes {
+  display: grid;
+  gap: 32px;
+  margin-top: 44px;
+}
+.titulo-bloco {
+  margin-bottom: 16px;
+  font-family: var(--fonte-titulo);
+  font-size: 26px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.ficha {
+  display: grid;
+  gap: 16px;
+}
+.ficha__grupo {
+  padding: 18px;
+  border-radius: var(--raio-cartao);
+  background: var(--carvao);
+  border: 1px solid var(--grafite);
+}
+.ficha__titulo {
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vermelho-texto-escuro);
+}
+.ficha__linha {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--grafite);
+  font-size: 15px;
+}
+.ficha__linha:last-child {
+  border-bottom: 0;
+}
+.ficha__linha dt {
+  color: var(--texto-claro);
+}
+.ficha__linha dd {
+  font-weight: 700;
+  text-align: right;
+}
+.texto-corrido {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 42em;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--texto-claro-forte);
+}
+.parecidas {
+  margin-top: 48px;
+}
+
+.barra-moto {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px var(--respiro) calc(10px + env(safe-area-inset-bottom));
+  background: rgba(11, 11, 13, 0.96);
+  border-top: 1px solid var(--grafite);
+}
+.barra-moto__parcela {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.barra-moto__parcela span {
+  font-size: 13px;
+  color: var(--texto-claro);
+}
+.barra-moto__parcela strong {
+  font-family: var(--fonte-titulo);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--vermelho-texto-escuro);
+}
+.barra-moto .botao {
+  flex: none;
+}
+.pagina-moto ~ .rodape {
+  padding-bottom: 76px;
+}
+
+@media (min-width: 600px) {
+  .galeria {
+    margin-inline: 0;
+  }
+  .galeria__slide {
+    border-radius: var(--raio-cartao);
+    overflow: hidden;
+  }
+  .galeria__trilho {
+    border-radius: var(--raio-cartao);
+  }
+  .galeria__contador {
+    right: 12px;
+  }
+  .ficha {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .pagina-moto {
+    padding-top: 28px;
+  }
+  .moto {
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 40px;
+  }
+  .galeria__miniaturas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .galeria__miniatura {
+    display: block;
+    width: 96px;
+    height: 72px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+  }
+  .galeria__miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .galeria__miniatura:hover,
+  .galeria__miniatura[aria-current='true'] {
+    opacity: 1;
+  }
+  .galeria__miniatura[aria-current='true'] {
+    border-color: var(--vermelho);
+  }
+  .moto__info {
+    position: sticky;
+    top: 24px;
+  }
+  .moto-detalhes {
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    gap: 40px;
+  }
+  .ficha {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .barra-moto {
+    display: none;
+  }
+  .pagina-moto ~ .rodape {
+    padding-bottom: 0;
+  }
+}

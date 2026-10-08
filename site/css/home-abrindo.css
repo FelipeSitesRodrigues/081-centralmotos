@@ -1,0 +1,18 @@
+/*
+ * Abertura da home no celular e no tablet. O <html> nasce com a classe "abrindo" e o
+ * base.js tira quando a primeira pintura é registrada. Até lá, as caixas de foto das seções
+ * abaixo do hero (cartões do estoque e troca) ficam sem desenhar o conteúdo, e foto lazy que
+ * não é desenhada não é pedida: elas não baixam junto com a foto do hero (no Lighthouse eram
+ * 185 KB começando antes da primeira pintura, e com as fotos de verdade do painel seria mais).
+ * Cada caixa tem aspect-ratio próprio, então nada muda de tamanho nem de lugar.
+ * Sem JS, o (scripting: enabled) não vale e nada fica segurado; se o JS não chegar, a
+ * animação abrir-fotos (_base.css) solta em 3 s.
+ * No computador o estoque já aparece perto da primeira tela, então lá não segura nada.
+ */
+@media (max-width: 1023px) and (scripting: enabled) {
+  .abrindo main > .secao .card__foto,
+  .abrindo main > .secao .troca__imagem {
+    content-visibility: hidden;
+    animation: abrir-fotos 0s 3s forwards;
+  }
+}

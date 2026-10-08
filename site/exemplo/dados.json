@@ -1,0 +1,319 @@
+{
+ "motos": [
+  {
+   "id": "cb57e78a-2cbc-4c6d-a013-4a96fff4cc0c",
+   "codigo": 1,
+   "slug": "honda-pop-110i-2025-1",
+   "status": "publicado",
+   "marca": "Honda",
+   "marca_slug": "honda",
+   "modelo": "Pop 110i",
+   "modelo_slug": "pop-110i",
+   "versao": null,
+   "ano_fabricacao": 2025,
+   "ano_modelo": 2025,
+   "condicao": "seminova",
+   "km": 4000,
+   "cor": "branca",
+   "cilindrada": 109,
+   "categoria": "street",
+   "combustivel": "gasolina",
+   "partida": "eletrica",
+   "freio": null,
+   "cambio": "manual",
+   "final_placa": null,
+   "ipva_pago_ate": 2026,
+   "unico_dono": false,
+   "manual_chave": false,
+   "revisada": false,
+   "so_transferir": true,
+   "aceita_troca": true,
+   "descricao": "Pop 110i ano 2025 com apenas 4 mil km rodados.\nIPVA 2026 pago, documento em branco: é só transferir.",
+   "destaque": true,
+   "ordem": 0,
+   "parcela_exibida": 780,
+   "busca": "honda pop 110i  2025 2025 seminova usada branca street 109cc cm-0001 1",
+   "publicado_em": "2026-10-07T00:28:27.791Z",
+   "vendido_em": null,
+   "atualizado_em": "2026-10-07T00:28:27.791Z",
+   "fotos": [
+    {
+     "id": "00712c7f-01c1-457c-8436-f26563315703",
+     "larguras": [
+      375
+     ],
+     "formato": "webp",
+     "largura": 375,
+     "altura": 654,
+     "foco_x": 50,
+     "foco_y": 56,
+     "cor_media": "#686858",
+     "og": false
+    },
+    {
+     "id": "15308711-3c02-49ad-b4bb-01897c903f0e",
+     "larguras": [
+      379
+     ],
+     "formato": "webp",
+     "largura": 379,
+     "altura": 661,
+     "foco_x": 50,
+     "foco_y": 52,
+     "cor_media": "#686868",
+     "og": false
+    },
+    {
+     "id": "a3b77cad-0705-448e-a333-8b6e93d0801c",
+     "larguras": [
+      373
+     ],
+     "formato": "webp",
+     "largura": 373,
+     "altura": 664,
+     "foco_x": 50,
+     "foco_y": 56,
+     "cor_media": "#585858",
+     "og": false
+    },
+    {
+     "id": "3c5b94c5-f6bf-439e-9966-8eb1c67e2923",
+     "larguras": [
+      369
+     ],
+     "formato": "webp",
+     "largura": 369,
+     "altura": 662,
+     "foco_x": 50,
+     "foco_y": 40,
+     "cor_media": "#c8b898",
+     "og": false
+    },
+    {
+     "id": "39e17fcb-3051-4a2a-8c10-702bc9486c34",
+     "larguras": [
+      422
+     ],
+     "formato": "webp",
+     "largura": 422,
+     "altura": 745,
+     "foco_x": 50,
+     "foco_y": 50,
+     "cor_media": "#787888",
+     "og": false
+    }
+   ]
+  },
+  {
+   "id": "d8f66501-e877-4400-b1cf-efde514aadd1",
+   "codigo": 2,
+   "slug": "honda-bros-160-esdd-2026-2",
+   "status": "publicado",
+   "marca": "Honda",
+   "marca_slug": "honda",
+   "modelo": "Bros 160",
+   "modelo_slug": "bros-160",
+   "versao": "ESDD",
+   "ano_fabricacao": 2026,
+   "ano_modelo": 2026,
+   "condicao": "0km",
+   "km": 0,
+   "cor": "azul",
+   "cilindrada": 162,
+   "categoria": "trail",
+   "combustivel": "gasolina",
+   "partida": "eletrica",
+   "freio": "cbs",
+   "cambio": "manual",
+   "final_placa": null,
+   "ipva_pago_ate": 2026,
+   "unico_dono": false,
+   "manual_chave": false,
+   "revisada": false,
+   "so_transferir": true,
+   "aceita_troca": true,
+   "descricao": "Bros 160 2026 zero quilômetro, lançamento.\nIPVA 2026 pago, placa Mercosul, só transferir. Pegamos sua moto na troca.",
+   "destaque": true,
+   "ordem": 0,
+   "parcela_exibida": 1560,
+   "busca": "honda bros 160 esdd 2026 2026 0km zero nova azul trail 162cc cm-0002 2",
+   "publicado_em": "2026-10-06T00:28:27.791Z",
+   "vendido_em": null,
+   "atualizado_em": "2026-10-06T00:28:27.791Z",
+   "fotos": [
+    {
+     "id": "ddd3b2e3-0140-44b0-9e4a-25440362a6e6",
+     "larguras": [
+      480
+     ],
+     "formato": "webp",
+     "largura": 521,
+     "altura": 497,
+     "foco_x": 50,
+     "foco_y": 58,
+     "cor_media": "#181818",
+     "og": false
+    },
+    {
+     "id": "70873b64-1872-431e-9bf6-013e61dcc22f",
+     "larguras": [
+      442
+     ],
+     "formato": "webp",
+     "largura": 442,
+     "altura": 572,
+     "foco_x": 50,
+     "foco_y": 55,
+     "cor_media": "#181818",
+     "og": false
+    },
+    {
+     "id": "c5379fe2-f3f1-4b15-9d15-c8151bc04c62",
+     "larguras": [
+      430
+     ],
+     "formato": "webp",
+     "largura": 430,
+     "altura": 574,
+     "foco_x": 50,
+     "foco_y": 45,
+     "cor_media": "#b8b8b8",
+     "og": false
+    },
+    {
+     "id": "39ec6e85-2617-4ad6-99eb-913c158fa87a",
+     "larguras": [
+      430
+     ],
+     "formato": "webp",
+     "largura": 430,
+     "altura": 563,
+     "foco_x": 50,
+     "foco_y": 50,
+     "cor_media": "#a89888",
+     "og": false
+    }
+   ]
+  },
+  {
+   "id": "fa150f94-1145-41b8-bbd6-18ef2068db2f",
+   "codigo": 3,
+   "slug": "honda-biz-100-2015-3",
+   "status": "publicado",
+   "marca": "Honda",
+   "marca_slug": "honda",
+   "modelo": "Biz 100",
+   "modelo_slug": "biz-100",
+   "versao": null,
+   "ano_fabricacao": 2015,
+   "ano_modelo": 2015,
+   "condicao": "seminova",
+   "km": 29000,
+   "cor": "vermelha",
+   "cilindrada": 97,
+   "categoria": "motoneta",
+   "combustivel": "gasolina",
+   "partida": "eletrica",
+   "freio": null,
+   "cambio": "manual",
+   "final_placa": null,
+   "ipva_pago_ate": 2026,
+   "unico_dono": false,
+   "manual_chave": false,
+   "revisada": false,
+   "so_transferir": true,
+   "aceita_troca": true,
+   "descricao": "Biz 100 2015 extra, com apenas 29 mil km.\nIPVA 2026 pago, só transferir. Pegamos sua moto na troca.",
+   "destaque": false,
+   "ordem": 0,
+   "parcela_exibida": 700,
+   "busca": "honda biz 100  2015 2015 seminova usada vermelha motoneta 97cc cm-0003 3",
+   "publicado_em": "2026-10-05T00:28:27.791Z",
+   "vendido_em": null,
+   "atualizado_em": "2026-10-05T00:28:27.791Z",
+   "fotos": [
+    {
+     "id": "f078c95e-55ff-46f5-822d-f5b50f3de334",
+     "larguras": [
+      463
+     ],
+     "formato": "webp",
+     "largura": 463,
+     "altura": 616,
+     "foco_x": 50,
+     "foco_y": 55,
+     "cor_media": "#181818",
+     "og": false
+    },
+    {
+     "id": "dc19e4af-0775-497a-9a67-33545a58b502",
+     "larguras": [
+      480
+     ],
+     "formato": "webp",
+     "largura": 522,
+     "altura": 490,
+     "foco_x": 50,
+     "foco_y": 58,
+     "cor_media": "#181818",
+     "og": false
+    },
+    {
+     "id": "210e8722-8b94-4b0b-8c60-1f5224751db8",
+     "larguras": [
+      464
+     ],
+     "formato": "webp",
+     "largura": 464,
+     "altura": 603,
+     "foco_x": 50,
+     "foco_y": 45,
+     "cor_media": "#181818",
+     "og": false
+    }
+   ]
+  }
+ ],
+ "lojas": [
+  {
+   "id": 1,
+   "nome": "Central Motos Irecê",
+   "cidade": "Irecê",
+   "uf": "BA",
+   "endereco": "R. Antônio Carlos Magalhães, 41",
+   "bairro": null,
+   "cep": "44860-069",
+   "whatsapp": "5574999936265",
+   "maps_url": null,
+   "latitude": null,
+   "longitude": null,
+   "horario": null,
+   "principal": false,
+   "posicao": 1,
+   "ativa": true
+  },
+  {
+   "id": 2,
+   "nome": "Central Motos LEM",
+   "cidade": "Luís Eduardo Magalhães",
+   "uf": "BA",
+   "endereco": "Endereço a confirmar com a loja",
+   "bairro": null,
+   "cep": null,
+   "whatsapp": "5577981503989",
+   "maps_url": null,
+   "latitude": null,
+   "longitude": null,
+   "horario": null,
+   "principal": true,
+   "posicao": 2,
+   "ativa": true
+  }
+ ],
+ "config": {
+  "prazo_padrao": 48,
+  "aviso_site": null,
+  "instagram": "centralmotoslem"
+ },
+ "entregas": []
+}

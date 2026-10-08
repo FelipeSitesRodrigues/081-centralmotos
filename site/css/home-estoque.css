@@ -1,0 +1,53 @@
+/* Estoque na home: título à esquerda, texto e "Ver todo o estoque" à direita (computador) */
+.estoque__topo {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.estoque__lado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.estoque__texto {
+  max-width: 34em;
+  font-size: 15.5px;
+  color: var(--texto-escuro);
+}
+.estoque__todos-topo {
+  display: none;
+}
+.estoque__todos {
+  width: 100%;
+  margin-top: 26px;
+}
+.estoque__vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 26px;
+  border-radius: var(--raio-cartao);
+  background: var(--branco);
+  box-shadow: var(--sombra-cartao);
+}
+
+@media (min-width: 1024px) {
+  .estoque__topo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  .estoque__lado {
+    align-items: flex-end;
+    text-align: left;
+  }
+  .estoque__todos-topo {
+    display: inline-flex;
+  }
+  .estoque__todos {
+    display: none;
+  }
+}

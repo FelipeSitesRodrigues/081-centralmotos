@@ -1,0 +1,65 @@
+/* Páginas de texto: política de privacidade e 404 */
+.pagina-texto {
+  padding-top: 28px;
+}
+.texto {
+  max-width: calc(760px + var(--respiro) * 2);
+}
+.texto .titulo {
+  margin-bottom: 8px;
+}
+.texto__data {
+  margin-bottom: 24px;
+  color: var(--texto-escuro);
+}
+.texto h2 {
+  margin: 28px 0 8px;
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  text-transform: uppercase;
+}
+.texto p,
+.texto li {
+  font-size: 16.5px;
+  line-height: 1.65;
+}
+.texto p + p {
+  margin-top: 10px;
+}
+.texto ul {
+  margin-top: 8px;
+  padding-left: 22px;
+}
+.texto a {
+  font-weight: 700;
+}
+.texto--404 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.texto__codigo {
+  font-family: var(--fonte-titulo);
+  font-size: 96px;
+  line-height: 1;
+  color: var(--vermelho);
+}
+.busca-404 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.busca-404 input {
+  flex: 1 1 220px;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #c9c4bc;
+  border-radius: var(--raio-botao);
+  background: var(--branco);
+  font-size: 16px;
+}
+.texto__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

@@ -1,0 +1,195 @@
+/* /estoque: título, filtros (gaveta no celular, linha no computador), contagem, grade e paginação */
+.pagina-estoque {
+  padding-top: 28px;
+}
+.pagina-estoque__topo {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.pagina-estoque__texto {
+  max-width: 40em;
+  color: var(--texto-escuro);
+}
+.filtros {
+  margin-bottom: 18px;
+  border: 1px solid #dcd8d1;
+  border-radius: var(--raio-cartao);
+  background: var(--branco);
+}
+.filtros__abrir {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 18px;
+  font-weight: 800;
+  list-style: none;
+  cursor: pointer;
+}
+.filtros__abrir::-webkit-details-marker {
+  display: none;
+}
+.filtros__abrir .i {
+  width: 22px;
+  height: 22px;
+}
+.filtros__quantos {
+  margin-left: auto;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--vermelho);
+  color: var(--branco);
+  font-size: 13px;
+}
+.filtros__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 4px 18px 18px;
+}
+.filtros__busca,
+.filtros__acoes {
+  grid-column: 1 / -1;
+}
+.filtros__campo,
+.filtros__busca {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.filtros__rotulo {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--texto-escuro);
+}
+.filtros select,
+.filtros input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 12px;
+  border: 1px solid #c9c4bc;
+  border-radius: var(--raio-botao);
+  background: var(--branco);
+  color: var(--tinta);
+  font-size: 16px;
+}
+.filtros__campo-busca {
+  position: relative;
+}
+.filtros__campo-busca .i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  color: var(--texto-escuro);
+  pointer-events: none;
+}
+.filtros__campo-busca input {
+  padding-left: 44px;
+}
+.filtros__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.filtros__acoes .botao--vermelho {
+  flex: 1 1 200px;
+}
+.pagina-estoque__contagem {
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+.pagina-estoque__erro,
+.pagina-estoque__nada {
+  margin-bottom: 18px;
+  padding: 18px;
+  border-radius: var(--raio-cartao);
+  background: var(--branco);
+}
+.pagina-estoque__nada {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.paginacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+.paginacao__info {
+  font-weight: 700;
+  color: var(--texto-escuro);
+}
+.paginacao .botao[aria-disabled='true'] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.pagina-estoque__aviso {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--texto-escuro);
+}
+.estoque__vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 26px;
+  border-radius: var(--raio-cartao);
+  background: var(--branco);
+}
+
+/* Abertura no celular (base.js e home-abrindo.css): até a primeira pintura, só a foto do
+   1º cartão (o LCP) baixa; as dos outros, abaixo da dobra, esperam. A caixa não muda. */
+@media (max-width: 599px) and (scripting: enabled) {
+  .abrindo .grade-cards > li:nth-child(n + 2) .card__foto {
+    content-visibility: hidden;
+    animation: abrir-fotos 0s 3s forwards;
+  }
+}
+
+@media (min-width: 900px) {
+  .filtros__form {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .filtros__busca {
+    grid-column: span 2;
+  }
+  .filtros__acoes {
+    grid-column: span 2;
+    align-self: end;
+  }
+}
+@media (min-width: 1180px) {
+  /* Os 8 campos numa linha só; os botões embaixo, à direita */
+  .filtros__form {
+    grid-template-columns: 1.6fr repeat(7, minmax(0, 1fr));
+    align-items: end;
+  }
+  .filtros__busca {
+    grid-column: auto;
+  }
+  .filtros__acoes {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+  .filtros__acoes .botao--vermelho {
+    flex: 0 0 auto;
+  }
+}

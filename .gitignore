@@ -1,0 +1,17 @@
+# Segredos: nenhum .env sobe (o exemplo sem valores sobe)
+.env*
+!.env.exemplo
+
+# Links de convite e de nova senha gerados pelo scripts/convidar.mjs
+.convites/
+
+# A CLI do Supabase grava aqui a ref e a URL do pooler (na 057 isso subiu pro GitHub)
+supabase/.temp/
+
+node_modules/
+dist/
+.next/
+.vercel/
+revisao/
+*.log
+*.tsbuildinfo

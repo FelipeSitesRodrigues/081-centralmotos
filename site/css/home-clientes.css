@@ -1,0 +1,115 @@
+/* Quem compra, aprova: carrossel de entregas (scroll-snap, sem padding no trilho) ou o convite pro Instagram */
+.clientes__topo {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+.clientes__lado {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+.clientes__texto {
+  max-width: 30em;
+  font-size: 15.5px;
+  color: var(--texto-escuro);
+}
+.clientes__setas {
+  display: none;
+  gap: 10px;
+}
+.seta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #cfcbc4;
+  border-radius: 50%;
+  background: var(--branco);
+  color: var(--tinta);
+  cursor: pointer;
+}
+.seta .i {
+  width: 20px;
+  height: 20px;
+}
+.seta:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.clientes__trilho {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0;
+  scrollbar-width: none;
+}
+.clientes__trilho::-webkit-scrollbar {
+  display: none;
+}
+.clientes__foto {
+  position: relative;
+  flex: 0 0 74%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--raio-cartao);
+  scroll-snap-align: start;
+}
+.clientes__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.clientes__legenda {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 26px 14px 12px;
+  background: linear-gradient(0deg, rgba(11, 11, 13, 0.85), rgba(11, 11, 13, 0));
+  color: var(--branco);
+  font-size: 14px;
+  font-weight: 700;
+}
+.clientes__instagram {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  border-radius: var(--raio-cartao);
+  background: var(--branco);
+  box-shadow: var(--sombra-cartao);
+}
+.clientes__instagram p {
+  max-width: 40em;
+  font-size: 16px;
+}
+
+@media (min-width: 600px) {
+  .clientes__foto {
+    flex-basis: calc(42% - 8px);
+  }
+}
+@media (min-width: 1024px) {
+  .clientes__topo {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 32px;
+  }
+  .clientes__setas {
+    display: flex;
+  }
+  .clientes__foto {
+    flex-basis: calc(20% - 13px);
+  }
+  .clientes__instagram {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 32px;
+  }
+}

@@ -1,0 +1,142 @@
+/* Financiamento: título, 4 passos e a moto (embaixo no celular, à direita no computador) */
+.financiamento {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.financiamento__conteudo {
+  position: relative;
+  z-index: 1;
+}
+.financiamento__sub {
+  margin-top: 12px;
+  font-size: 17px;
+  color: var(--texto-claro-forte);
+}
+.passos {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+.passo {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'numero icone'
+    'texto texto';
+  align-items: center;
+  gap: 12px 14px;
+  padding: 18px;
+  border: 1px solid var(--grafite);
+  border-radius: var(--raio-cartao);
+  background: var(--carvao);
+}
+.passo__numero {
+  grid-area: numero;
+  font-family: var(--fonte-titulo);
+  font-size: 38px;
+  line-height: 1;
+  color: var(--vermelho);
+}
+.passo__icone {
+  grid-area: icone;
+  width: 40px;
+  height: 40px;
+  color: var(--branco);
+}
+.passo__texto {
+  grid-area: texto;
+  font-size: 15.5px;
+  color: #e4e4e8;
+}
+.financiamento__rodape {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 28px;
+}
+.financiamento__rodape .botao {
+  width: 100%;
+}
+.financiamento__aviso {
+  max-width: 46em;
+  font-size: 13px;
+  color: var(--texto-claro);
+}
+.financiamento__moto {
+  position: relative;
+  order: 2;
+  margin-top: 28px;
+  aspect-ratio: 760 / 711;
+  max-height: 420px;
+  overflow: hidden;
+}
+.financiamento__moto picture,
+.financiamento__moto img {
+  width: 100%;
+  height: 100%;
+}
+.financiamento__moto img {
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+.financiamento__moto::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--preto) 0%, rgba(11, 11, 13, 0) 30%);
+}
+
+@media (min-width: 600px) {
+  .passos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .financiamento__rodape .botao {
+    width: auto;
+  }
+  .financiamento__moto {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (min-width: 1024px) {
+  .financiamento {
+    padding-bottom: 84px;
+  }
+  /* No computador o título vai numa linha só, como no mockup */
+  .financiamento__titulo .titulo__linha {
+    display: inline;
+  }
+  .financiamento__conteudo > * {
+    max-width: 780px;
+  }
+  .passos {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .passo {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'numero'
+      'icone'
+      'texto';
+    justify-items: start;
+    min-height: 168px;
+  }
+  .financiamento__moto {
+    position: absolute;
+    inset: 0 0 0 auto;
+    order: 0;
+    width: 40%;
+    max-height: none;
+    margin: 0;
+    aspect-ratio: auto;
+  }
+  .financiamento__moto::after {
+    background:
+      linear-gradient(90deg, var(--preto) 0%, rgba(11, 11, 13, 0.6) 30%, rgba(11, 11, 13, 0) 60%),
+      linear-gradient(0deg, var(--preto) 0%, rgba(11, 11, 13, 0) 20%);
+  }
+}

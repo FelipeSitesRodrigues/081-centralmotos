@@ -1,0 +1,163 @@
+/* Cabeçalho: logo, menu (a partir de 1024 px), Instagram e WhatsApp; no celular, menu em <details> (abre sem JS) */
+.topo {
+  position: relative;
+  z-index: 30;
+  background: var(--preto);
+}
+.topo__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 68px;
+}
+.topo__logo {
+  display: block;
+  flex: none;
+  border-radius: 4px;
+}
+.topo__logo-img {
+  width: 138px;
+  height: auto;
+}
+.topo__nav {
+  display: none;
+}
+.topo__nav ul {
+  display: flex;
+  gap: 2px;
+}
+.topo__link {
+  position: relative;
+  display: block;
+  padding: 12px 13px;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.topo__link:hover {
+  color: var(--branco);
+}
+.topo__link[aria-current='page'] {
+  color: var(--vermelho-texto-escuro);
+}
+.topo__link[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--vermelho);
+}
+.topo__acoes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.topo__insta {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--raio-botao);
+  color: var(--branco);
+}
+.topo__insta .i {
+  width: 26px;
+  height: 26px;
+}
+.topo__whats {
+  display: none;
+  min-height: 44px;
+  padding: 0 18px;
+}
+
+.menu {
+  position: static;
+}
+.menu__botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-right: -8px;
+  border-radius: var(--raio-botao);
+  color: var(--branco);
+  cursor: pointer;
+  list-style: none;
+}
+.menu__botao::-webkit-details-marker {
+  display: none;
+}
+.menu__botao .i {
+  width: 28px;
+  height: 28px;
+}
+.menu__abrir,
+.menu__fechar {
+  display: flex;
+}
+.menu__fechar,
+.menu[open] .menu__abrir {
+  display: none;
+}
+.menu[open] .menu__fechar {
+  display: flex;
+}
+.menu__painel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding: 8px var(--respiro) 24px;
+  background: var(--preto);
+  border-top: 1px solid var(--grafite);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
+}
+.menu__link {
+  display: block;
+  padding: 14px 2px;
+  border-bottom: 1px solid var(--grafite);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--branco);
+  text-decoration: none;
+}
+.menu__link[aria-current='page'] {
+  color: var(--vermelho-texto-escuro);
+}
+.menu__whats {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (min-width: 600px) {
+  .topo__whats {
+    display: inline-flex;
+  }
+}
+@media (min-width: 1024px) {
+  .topo__barra {
+    min-height: 96px;
+  }
+  .topo__logo-img {
+    width: 204px;
+  }
+  .topo__nav,
+  .topo__insta {
+    display: flex;
+  }
+  .menu {
+    display: none;
+  }
+  .topo--sobre {
+    position: absolute;
+    inset: 0 0 auto;
+    background: transparent;
+  }
+}

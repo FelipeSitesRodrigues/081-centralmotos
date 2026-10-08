@@ -1,0 +1,127 @@
+/* Cartão da moto e a grade: 1 coluna no celular, 2 a partir de 600 px, 3 a partir de 900, 4 a partir de 1180 */
+.grade-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.grade-cards > li {
+  min-width: 0;
+}
+.so-em-tela-larga {
+  display: none;
+}
+@media (min-width: 600px) {
+  .grade-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .so-em-tela-larga {
+    display: block;
+  }
+}
+@media (min-width: 900px) {
+  .grade-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1180px) {
+  .grade-cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--raio-cartao);
+  background: var(--branco);
+  color: var(--tinta);
+  box-shadow: var(--sombra-cartao);
+}
+.card__foto {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--grafite);
+}
+.card__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+.card:hover .card__foto img {
+  transform: scale(1.03);
+}
+.card__foto .selo {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+.card__corpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 16px 18px;
+}
+.card__nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.card__nome a {
+  text-decoration: none;
+}
+.card__nome a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.card__ficha {
+  font-size: 14px;
+  color: var(--texto-escuro);
+}
+.card__parcela {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+.card__parcela span {
+  font-size: 14px;
+  color: var(--texto-escuro);
+}
+.card__parcela strong {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--vermelho);
+}
+.card__botoes {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+.card__detalhes {
+  flex: 1;
+  min-height: 46px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+.card__detalhes .i {
+  width: 16px;
+  height: 16px;
+}
+.card .botao--icone {
+  min-height: 46px;
+  width: 46px;
+}

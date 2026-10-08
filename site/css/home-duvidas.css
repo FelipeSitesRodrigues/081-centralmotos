@@ -1,0 +1,69 @@
+/* Dúvidas: <details> nativo sobre o vermelho */
+.duvidas__grade {
+  display: grid;
+  gap: 28px;
+}
+.duvidas__cabeca {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+.duvidas__cabeca .botao {
+  width: 100%;
+}
+.duvidas__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.duvida {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--raio-botao);
+  background: rgba(255, 255, 255, 0.04);
+}
+.duvida[open] {
+  background: rgba(11, 11, 13, 0.14);
+}
+.duvida__pergunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 14px 18px;
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  list-style: none;
+  cursor: pointer;
+}
+.duvida__pergunta::-webkit-details-marker {
+  display: none;
+}
+.duvida__mais {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+.duvida[open] .duvida__mais {
+  transform: rotate(45deg);
+}
+.duvida__resposta {
+  padding: 0 18px 18px;
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+@media (min-width: 600px) {
+  .duvidas__cabeca .botao {
+    width: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .duvidas__grade {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+    align-items: start;
+    gap: 48px;
+  }
+}

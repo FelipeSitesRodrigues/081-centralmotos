@@ -1,0 +1,31 @@
+/* Gerado por scripts/baixar-fontes.mjs. Não editar à mão. */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fontes/anton.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Anton fallback';
+  src: local('Impact'), local('Haettenschweiler'), local('Arial Narrow Bold'), local('Arial Bold');
+  size-adjust: 95.09%;
+  ascent-override: 123.70%;
+  descent-override: 34.61%;
+  line-gap-override: 0.00%;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/assets/fontes/manrope-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope fallback';
+  src: local('Arial'), local('Helvetica'), local('Roboto');
+  size-adjust: 100.93%;
+  ascent-override: 105.61%;
+  descent-override: 29.72%;
+  line-gap-override: 0.00%;
+}

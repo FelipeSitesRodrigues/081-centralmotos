@@ -1,0 +1,74 @@
+/* As duas lojas: um cartão por loja com endereço, horário, WhatsApp da loja e "Como chegar" */
+.lojas__grade {
+  display: grid;
+  gap: 28px;
+}
+.lojas__texto {
+  max-width: 30em;
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--texto-claro-forte);
+}
+.lojas__lista {
+  display: grid;
+  gap: 16px;
+}
+.loja {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid var(--grafite);
+  border-radius: var(--raio-cartao);
+  background: var(--carvao);
+}
+.loja__cidade {
+  font-family: var(--fonte-titulo);
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.loja__endereco,
+.loja__horario {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--texto-claro-forte);
+}
+.loja__pino {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  color: var(--vermelho);
+}
+.loja__relogio {
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+.loja__telefone {
+  font-size: 18px;
+  font-weight: 800;
+}
+.loja__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+.loja__botoes .botao {
+  flex: 1 1 180px;
+}
+
+@media (min-width: 700px) {
+  .lojas__lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .lojas__grade {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: start;
+    gap: 48px;
+  }
+}

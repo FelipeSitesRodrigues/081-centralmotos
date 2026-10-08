@@ -1,0 +1,53 @@
+/* Por que comprar: título e 4 motivos. 2x2 no celular, em linha com divisórias no computador */
+.porque {
+  padding-block: 46px;
+}
+.porque__grade {
+  display: grid;
+  gap: 26px;
+}
+.porque__lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.porque__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 10px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+.porque__item:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+.porque__item:nth-child(-n + 2) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.porque__icone {
+  width: 44px;
+  height: 44px;
+}
+
+@media (min-width: 1024px) {
+  .porque {
+    padding-block: 50px;
+  }
+  .porque__grade {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 2.6fr);
+    align-items: center;
+    gap: 40px;
+  }
+  .porque__lista {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .porque__item {
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 14px;
+  }
+}

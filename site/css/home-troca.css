@@ -1,0 +1,76 @@
+/* Troca. Celular (mockup): título, texto, imagem e o botão embaixo. Computador: texto à esquerda, imagem à direita */
+.troca {
+  overflow: hidden;
+}
+.troca__grade {
+  display: grid;
+  grid-template-areas:
+    'titulo'
+    'texto'
+    'imagem'
+    'botao';
+}
+.troca__titulo {
+  grid-area: titulo;
+}
+.troca__texto {
+  grid-area: texto;
+  max-width: 26em;
+  margin-top: 16px;
+  font-size: 17px;
+  color: var(--texto-claro-forte);
+}
+.troca__imagem {
+  grid-area: imagem;
+  margin: 26px calc(var(--respiro) * -1) 0;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+.troca__imagem picture,
+.troca__imagem img {
+  width: 100%;
+  height: 100%;
+}
+.troca__imagem img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.troca__botao {
+  grid-area: botao;
+  width: 100%;
+  margin-top: 24px;
+}
+
+@media (min-width: 600px) {
+  .troca__imagem {
+    aspect-ratio: 2.4 / 1;
+  }
+  .troca__botao {
+    width: auto;
+    justify-self: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .troca {
+    padding-block: 64px;
+  }
+  .troca__grade {
+    grid-template-areas:
+      'titulo imagem'
+      'texto imagem'
+      'botao imagem';
+    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: 40px;
+    align-items: start;
+  }
+  .troca__titulo {
+    align-self: end;
+  }
+  .troca__imagem {
+    margin: 0 calc(var(--respiro) * -1) 0 0;
+    aspect-ratio: 2.25 / 1;
+    align-self: center;
+  }
+}

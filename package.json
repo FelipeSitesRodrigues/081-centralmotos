@@ -1,0 +1,27 @@
+{
+  "name": "081-central-motos",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "banco:migrar": "node --env-file=.env.supabase.local scripts/aplicar-migracao.mjs",
+    "banco:semear": "node --env-file=.env.supabase.local scripts/rodar-sql.mjs supabase/seed/marcas-modelos.sql && node --env-file=.env.supabase.local scripts/rodar-sql.mjs supabase/seed/lojas.sql",
+    "banco:tipos": "node --env-file=.env.supabase.local scripts/gerar-tipos.mjs",
+    "banco:testar": "node --env-file=.env.supabase.local supabase/testes/regras.mjs && node --env-file=.env.local --env-file=.env.supabase.local supabase/testes/rls.mjs"
+  },
+  "workspaces": [
+    "compartilhado",
+    "painel"
+  ],
+  "devDependencies": {
+    "@phosphor-icons/core": "^2.1.1",
+    "cheerio": "^1.2.0",
+    "lighthouse": "^13.5.0",
+    "opentype.js": "^2.0.0",
+    "puppeteer-core": "^25.12.0",
+    "sharp": "^0.35.5",
+    "subset-font": "^2.9.0"
+  }
+}

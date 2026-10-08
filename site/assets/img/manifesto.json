@@ -1,0 +1,187 @@
+{
+ "logo-180.avif": {
+  "w": 180,
+  "h": 63,
+  "bytes": 6573
+ },
+ "logo-180.webp": {
+  "w": 180,
+  "h": 63,
+  "bytes": 10594
+ },
+ "logo-270.avif": {
+  "w": 270,
+  "h": 94,
+  "bytes": 10279
+ },
+ "logo-270.webp": {
+  "w": 270,
+  "h": 94,
+  "bytes": 18504
+ },
+ "logo-360.avif": {
+  "w": 360,
+  "h": 125,
+  "bytes": 13575
+ },
+ "logo-360.webp": {
+  "w": 360,
+  "h": 125,
+  "bytes": 26710
+ },
+ "logo-540.avif": {
+  "w": 540,
+  "h": 188,
+  "bytes": 21217
+ },
+ "logo-540.webp": {
+  "w": 540,
+  "h": 188,
+  "bytes": 43426
+ },
+ "hero-desk-960.avif": {
+  "w": 960,
+  "h": 540,
+  "bytes": 28957
+ },
+ "hero-desk-960.webp": {
+  "w": 960,
+  "h": 540,
+  "bytes": 58012
+ },
+ "hero-desk-1280.avif": {
+  "w": 1280,
+  "h": 720,
+  "bytes": 44863
+ },
+ "hero-desk-1280.webp": {
+  "w": 1280,
+  "h": 720,
+  "bytes": 89696
+ },
+ "hero-desk-1672.avif": {
+  "w": 1672,
+  "h": 941,
+  "bytes": 67555
+ },
+ "hero-desk-1672.webp": {
+  "w": 1672,
+  "h": 941,
+  "bytes": 131258
+ },
+ "hero-mob-480.avif": {
+  "w": 480,
+  "h": 388,
+  "bytes": 21043
+ },
+ "hero-mob-480.webp": {
+  "w": 480,
+  "h": 388,
+  "bytes": 42500
+ },
+ "hero-mob-760.avif": {
+  "w": 760,
+  "h": 614,
+  "bytes": 40746
+ },
+ "hero-mob-760.webp": {
+  "w": 760,
+  "h": 614,
+  "bytes": 84310
+ },
+ "hero-mob-941.avif": {
+  "w": 941,
+  "h": 760,
+  "bytes": 53905
+ },
+ "hero-mob-941.webp": {
+  "w": 941,
+  "h": 760,
+  "bytes": 111492
+ },
+ "troca-640.avif": {
+  "w": 640,
+  "h": 228,
+  "bytes": 13195
+ },
+ "troca-640.webp": {
+  "w": 640,
+  "h": 228,
+  "bytes": 22704
+ },
+ "troca-960.avif": {
+  "w": 960,
+  "h": 341,
+  "bytes": 24168
+ },
+ "troca-960.webp": {
+  "w": 960,
+  "h": 341,
+  "bytes": 41966
+ },
+ "troca-1280.avif": {
+  "w": 1280,
+  "h": 455,
+  "bytes": 36552
+ },
+ "troca-1280.webp": {
+  "w": 1280,
+  "h": 455,
+  "bytes": 64026
+ },
+ "troca-1600.avif": {
+  "w": 1600,
+  "h": 569,
+  "bytes": 50737
+ },
+ "troca-1600.webp": {
+  "w": 1600,
+  "h": 569,
+  "bytes": 88516
+ },
+ "financ-moto-480.avif": {
+  "w": 480,
+  "h": 449,
+  "bytes": 16181
+ },
+ "financ-moto-480.webp": {
+  "w": 480,
+  "h": 449,
+  "bytes": 28136
+ },
+ "financ-moto-760.avif": {
+  "w": 760,
+  "h": 711,
+  "bytes": 30261
+ },
+ "financ-moto-760.webp": {
+  "w": 760,
+  "h": 711,
+  "bytes": 53244
+ },
+ "og-central-motos.jpg": {
+  "w": 1200,
+  "h": 630,
+  "bytes": 117383
+ },
+ "favicon.svg": {
+  "w": 512,
+  "h": 512,
+  "bytes": 957
+ },
+ "favicon-32.png": {
+  "w": 32,
+  "h": 32,
+  "bytes": 737
+ },
+ "apple-touch-icon.png": {
+  "w": 180,
+  "h": 180,
+  "bytes": 3661
+ },
+ "icone-512.png": {
+  "w": 512,
+  "h": 512,
+  "bytes": 12321
+ }
+}

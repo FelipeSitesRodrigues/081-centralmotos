@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+/*
+ * Painel da Central Motos: tela de operação, no celular, dentro da loja.
+ * Claro (legível sob luz forte), alto contraste, vermelho da marca só na ação
+ * principal, alvos de toque de 44 px no mínimo e campo com 16 px de letra (o
+ * iPhone não dá zoom ao focar).
+ */
+@theme {
+  --font-sans: var(--fonte-manrope), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --color-preto: #0b0b0d;
+  --color-carvao: #16161a;
+  --color-grafite: #2a2a30;
+  --color-vermelho: #e01a22;
+  --color-vermelho-escuro: #b80f17;
+  --color-gelo: #f5f4f2;
+  --color-papel: #ffffff;
+  --color-linha: #dedbd6;
+  --color-linha-forte: #b9b5ae;
+  --color-tinta: #0b0b0d;
+  --color-tinta-2: #4f4f57;
+  --color-verde: #15803d;
+
+  /* Situação da moto: fundo claro com texto escuro, todos acima de 7:1 */
+  --color-no-ar: #dcfce7;
+  --color-no-ar-texto: #14532d;
+  --color-rascunho: #ebe8e3;
+  --color-rascunho-texto: #3f3f46;
+  --color-reservada: #fef3c7;
+  --color-reservada-texto: #78350f;
+  --color-vendida: #dbeafe;
+  --color-vendida-texto: #1e3a8a;
+  --color-arquivada: #e4e4e7;
+  --color-arquivada-texto: #3f3f46;
+
+  --color-erro: #b91c1c;
+  --color-erro-fundo: #fef2f2;
+  --color-ok-fundo: #f0fdf4;
+
+  --radius-cartao: 10px;
+  --radius-botao: 8px;
+  --radius-selo: 4px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    color-scheme: light;
+  }
+
+  body {
+    background: var(--color-gelo);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-preto);
+    outline-offset: 2px;
+  }
+
+  .no-escuro :focus-visible {
+    outline-color: var(--color-papel);
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Número sem setinhas: o teclado numérico do celular já resolve */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
