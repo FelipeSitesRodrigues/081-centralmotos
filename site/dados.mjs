@@ -32,7 +32,8 @@ export async function carregarDados({ exemplo }) {
       ler('vitrine_motos?select=*&order=destaque.desc,ordem.asc,publicado_em.desc'),
       ler('lojas?select=*&order=posicao.asc,id.asc'),
       ler('configuracoes?select=prazo_padrao,aviso_site,instagram'),
-      ler('entregas?select=*&order=posicao.asc'),
+      // Só as colunas liberadas pro visitante: select=* pede as outras e o banco recusa (401)
+      ler('entregas?select=id,posicao,publicada,legenda,larguras,formato,largura_original,altura_original,foco_x,foco_y,cor_media&order=posicao.asc'),
     ])
     bruto = { motos, lojas, config: configuracoes[0] ?? {}, entregas, arquivos: `${url}/storage/v1/object/public`, origem: 'banco' }
   }
