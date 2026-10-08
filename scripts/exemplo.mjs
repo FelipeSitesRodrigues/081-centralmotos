@@ -4,13 +4,13 @@
  *
  *   node scripts/exemplo.mjs
  *
- * As 3 primeiras motos são as reais que a loja mandou (prints do Instagram, com preço e
- * ficha da legenda); as outras 5 repetem as fotos com outra ficha, só pra encher a grade
- * de 8 do mockup. As fotos são de baixa resolução (prints de celular): servem pra
+ * Só as 3 motos reais que a loja mandou, uma pasta por moto em Recursos Site/Motos (prints
+ * do Instagram, com preço e ficha da legenda). Nada de moto inventada pra encher a grade:
+ * o Felipe pediu o estoque fiel ao que a loja tem. As fotos são de baixa resolução (prints de celular): servem pra
  * desenvolver, não pro site. O build no domínio de verdade recusa este modo.
  */
 import { randomUUID } from 'node:crypto'
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import sharp from 'sharp'
 
 const PRINTS = '../081-Central Motos/Recursos Site/Motos'
@@ -22,11 +22,14 @@ const COEFICIENTE = 0.0537
 const parcela = (reais) => Math.ceil((reais * COEFICIENTE) / 10) * 10
 
 /** Foto a partir do print: corta a legenda do Instagram quando tem (topo = fração da altura). */
-async function foto(veiculo, arquivo, { topo = 1, focoX = 50, focoY = 56 } = {}) {
+async function foto(veiculo, pasta, arquivo, { topo = 1, focoX = 50, focoY = 56 } = {}) {
   const id = randomUUID()
-  const meta = await sharp(`${PRINTS}/Captura de tela 2026-10-07 ${arquivo}.png`).metadata()
+  const nome = readdirSync(`${PRINTS}/${pasta}`).find((n) => n.startsWith(`Captura de tela 2026-10-07 ${arquivo}`))
+  if (!nome) throw new Error(`Print ${arquivo} não está em ${PRINTS}/${pasta}`)
+  const caminho = `${PRINTS}/${pasta}/${nome}`
+  const meta = await sharp(caminho).metadata()
   const altura = Math.round(meta.height * topo)
-  const base = await sharp(`${PRINTS}/Captura de tela 2026-10-07 ${arquivo}.png`).extract({ left: 0, top: 0, width: meta.width, height: altura }).toBuffer()
+  const base = await sharp(caminho).extract({ left: 0, top: 0, width: meta.width, height: altura }).toBuffer()
   const larguras = [Math.min(meta.width, 480)]
   mkdirSync(`${SAIDA}/fotos/veiculos/${veiculo}`, { recursive: true })
   for (const l of larguras) {
@@ -41,11 +44,11 @@ const agora = Date.now()
 const dia = 86_400_000
 let codigo = 0
 
-async function moto(m, fotos) {
+async function moto(m, pasta, fotos) {
   const id = randomUUID()
   codigo += 1
   const lista = []
-  for (const [arquivo, opcoes] of fotos) lista.push(await foto(id, arquivo, opcoes))
+  for (const [arquivo, opcoes] of fotos) lista.push(await foto(id, pasta, arquivo, opcoes))
   const slugBase = `${m.marca_slug}-${m.modelo.toLowerCase().replace(/[^a-z0-9]+/g, '-')}${m.versao ? `-${m.versao.toLowerCase()}` : ''}-${m.ano_modelo}`
   return {
     id,
@@ -98,6 +101,7 @@ const motos = [
       cilindrada: 109, categoria: 'street', preco: 14500, ipva_pago_ate: 2026, so_transferir: true, destaque: true,
       descricao: 'Pop 110i ano 2025 com apenas 4 mil km rodados.\nIPVA 2026 pago, documento em branco: é só transferir.',
     },
+    'pop 110 2025',
     POP,
   ),
   await moto(
@@ -106,6 +110,7 @@ const motos = [
       cilindrada: 162, categoria: 'trail', preco: 28900, ipva_pago_ate: 2026, so_transferir: true, freio: 'cbs', destaque: true,
       descricao: 'Bros 160 2026 zero quilômetro, lançamento.\nIPVA 2026 pago, placa Mercosul, só transferir. Pegamos sua moto na troca.',
     },
+    'BROS 2026',
     BROS,
   ),
   await moto(
@@ -114,15 +119,9 @@ const motos = [
       cilindrada: 97, categoria: 'motoneta', preco: 12900, ipva_pago_ate: 2026, so_transferir: true,
       descricao: 'Biz 100 2015 extra, com apenas 29 mil km.\nIPVA 2026 pago, só transferir. Pegamos sua moto na troca.',
     },
+    'Honda Biz 100 Vermelha 2015',
     BIZ,
   ),
-  await moto({ marca: 'Honda', marca_slug: 'honda', modelo: 'Pop 110i', ano_fabricacao: 2024, ano_modelo: 2024, condicao: 'seminova', km: 12500, cor: 'branca', cilindrada: 109, categoria: 'street', preco: 12200 }, POP.slice(1, 3)),
-  await moto({ marca: 'Honda', marca_slug: 'honda', modelo: 'Bros 160', versao: 'ESDD', ano_fabricacao: 2024, ano_modelo: 2025, condicao: 'seminova', km: 18000, cor: 'azul', cilindrada: 162, categoria: 'trail', preco: 23500, status: 'reservado' }, BROS.slice(1, 3)),
-  await moto({ marca: 'Honda', marca_slug: 'honda', modelo: 'Biz 125', ano_fabricacao: 2023, ano_modelo: 2023, condicao: 'seminova', km: 9800, cor: 'vermelha', cilindrada: 124, categoria: 'motoneta', preco: 16900 }, BIZ.slice(0, 2)),
-  await moto({ marca: 'Honda', marca_slug: 'honda', modelo: 'Pop 110i', ano_fabricacao: 2026, ano_modelo: 2026, condicao: '0km', km: 0, cor: 'branca', cilindrada: 109, categoria: 'street', preco: 15900 }, POP.slice(0, 2)),
-  await moto({ marca: 'Honda', marca_slug: 'honda', modelo: 'Bros 160', ano_fabricacao: 2026, ano_modelo: 2026, condicao: '0km', km: 0, cor: 'azul', cilindrada: 162, categoria: 'trail', preco: 27800 }, BROS.slice(0, 2)),
-  // Uma vendida nesta semana: a página dela fica no ar com o aviso de vendida
-  await moto({ marca: 'Honda', marca_slug: 'honda', modelo: 'Biz 100', ano_fabricacao: 2016, ano_modelo: 2016, condicao: 'seminova', km: 33000, cor: 'vermelha', cilindrada: 97, categoria: 'motoneta', preco: 11900, status: 'vendido' }, BIZ.slice(0, 1)),
 ]
 
 const dados = {

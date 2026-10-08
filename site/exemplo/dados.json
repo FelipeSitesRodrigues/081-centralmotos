@@ -1,7 +1,7 @@
 {
  "motos": [
   {
-   "id": "cb57e78a-2cbc-4c6d-a013-4a96fff4cc0c",
+   "id": "1b547e94-c13a-4d81-ad4d-778f33c1f10c",
    "codigo": 1,
    "slug": "honda-pop-110i-2025-1",
    "status": "publicado",
@@ -33,12 +33,12 @@
    "ordem": 0,
    "parcela_exibida": 780,
    "busca": "honda pop 110i  2025 2025 seminova usada branca street 109cc cm-0001 1",
-   "publicado_em": "2026-10-07T00:28:27.791Z",
+   "publicado_em": "2026-10-07T10:59:11.342Z",
    "vendido_em": null,
-   "atualizado_em": "2026-10-07T00:28:27.791Z",
+   "atualizado_em": "2026-10-07T10:59:11.342Z",
    "fotos": [
     {
-     "id": "00712c7f-01c1-457c-8436-f26563315703",
+     "id": "3cefb68b-f408-48cf-83cb-35af9ee66652",
      "larguras": [
       375
      ],
@@ -51,7 +51,7 @@
      "og": false
     },
     {
-     "id": "15308711-3c02-49ad-b4bb-01897c903f0e",
+     "id": "8964142e-7446-42b4-9024-03a103c657a8",
      "larguras": [
       379
      ],
@@ -64,7 +64,7 @@
      "og": false
     },
     {
-     "id": "a3b77cad-0705-448e-a333-8b6e93d0801c",
+     "id": "928a1904-1a8a-4162-9f5f-51fb899e18fd",
      "larguras": [
       373
      ],
@@ -77,7 +77,7 @@
      "og": false
     },
     {
-     "id": "3c5b94c5-f6bf-439e-9966-8eb1c67e2923",
+     "id": "5e957f86-cd14-41fa-bd0c-82060b4bef7d",
      "larguras": [
       369
      ],
@@ -90,7 +90,7 @@
      "og": false
     },
     {
-     "id": "39e17fcb-3051-4a2a-8c10-702bc9486c34",
+     "id": "eb43c1c2-044b-4ee5-807d-d87a7a1f1106",
      "larguras": [
       422
      ],
@@ -105,7 +105,7 @@
    ]
   },
   {
-   "id": "d8f66501-e877-4400-b1cf-efde514aadd1",
+   "id": "8a376c70-642c-490d-a203-3f33c802f084",
    "codigo": 2,
    "slug": "honda-bros-160-esdd-2026-2",
    "status": "publicado",
@@ -137,12 +137,12 @@
    "ordem": 0,
    "parcela_exibida": 1560,
    "busca": "honda bros 160 esdd 2026 2026 0km zero nova azul trail 162cc cm-0002 2",
-   "publicado_em": "2026-10-06T00:28:27.791Z",
+   "publicado_em": "2026-10-06T10:59:11.342Z",
    "vendido_em": null,
-   "atualizado_em": "2026-10-06T00:28:27.791Z",
+   "atualizado_em": "2026-10-06T10:59:11.342Z",
    "fotos": [
     {
-     "id": "ddd3b2e3-0140-44b0-9e4a-25440362a6e6",
+     "id": "0b1f1c38-6427-40ea-bb22-0862489f6220",
      "larguras": [
       480
      ],
@@ -155,7 +155,7 @@
      "og": false
     },
     {
-     "id": "70873b64-1872-431e-9bf6-013e61dcc22f",
+     "id": "56ffe654-acb8-48f4-a304-85e1244cd2a0",
      "larguras": [
       442
      ],
@@ -168,7 +168,7 @@
      "og": false
     },
     {
-     "id": "c5379fe2-f3f1-4b15-9d15-c8151bc04c62",
+     "id": "77225999-6950-420e-af06-d9eaaa3251c0",
      "larguras": [
       430
      ],
@@ -181,7 +181,7 @@
      "og": false
     },
     {
-     "id": "39ec6e85-2617-4ad6-99eb-913c158fa87a",
+     "id": "615e3046-2739-4e8f-aa83-95c18a8159d9",
      "larguras": [
       430
      ],
@@ -196,7 +196,7 @@
    ]
   },
   {
-   "id": "fa150f94-1145-41b8-bbd6-18ef2068db2f",
+   "id": "b7f2ecda-4cd5-45aa-9067-cf908180a367",
    "codigo": 3,
    "slug": "honda-biz-100-2015-3",
    "status": "publicado",
@@ -228,12 +228,12 @@
    "ordem": 0,
    "parcela_exibida": 700,
    "busca": "honda biz 100  2015 2015 seminova usada vermelha motoneta 97cc cm-0003 3",
-   "publicado_em": "2026-10-05T00:28:27.791Z",
+   "publicado_em": "2026-10-05T10:59:11.342Z",
    "vendido_em": null,
-   "atualizado_em": "2026-10-05T00:28:27.791Z",
+   "atualizado_em": "2026-10-05T10:59:11.342Z",
    "fotos": [
     {
-     "id": "f078c95e-55ff-46f5-822d-f5b50f3de334",
+     "id": "e2d3921d-7770-41e5-8883-1c01aa6ddc8d",
      "larguras": [
       463
      ],
@@ -246,7 +246,7 @@
      "og": false
     },
     {
-     "id": "dc19e4af-0775-497a-9a67-33545a58b502",
+     "id": "2dee866b-c531-4925-af90-b98ece68517d",
      "larguras": [
       480
      ],
@@ -259,7 +259,7 @@
      "og": false
     },
     {
-     "id": "210e8722-8b94-4b0b-8c60-1f5224751db8",
+     "id": "2dba0e05-aefe-4b2b-95c5-e11780def81d",
      "larguras": [
       464
      ],
